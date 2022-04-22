@@ -1,4 +1,4 @@
-"""projeto URL Configuration
+"""djangoProject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -13,9 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('recipes.urls')),
+    # path('recipes/', include('recipes.urls')), www.dominio.com.br/recipes/sobre|home|contato, o caminho apos o recipes vem da urls.py da pasta recipe
+
+
 ]
